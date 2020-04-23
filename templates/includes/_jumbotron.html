@@ -1,0 +1,10 @@
+<div class="jumbotron">
+    <h1 class="display-4">Hello, world!</h1>
+    <p class="lead">This is a Flask Application for Article Management</p>
+    <hr class="my-4">
+    <p>This is awesome if you consider Python for your future development</p>
+    {%if session.logged_in==NULL%}
+        <a href="/register" class="btn btn-primary btn-lg">Register</a>
+        <a href="/login" class="btn btn-success btn-lg">Login</a>
+    {%endif%}
+</div>

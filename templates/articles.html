@@ -1,0 +1,25 @@
+{% extends 'layout.html'%} <!--
+    this where all our common code for the layout
+    will be rendered
+-->
+
+<!--
+    this is how you have to insert your DOM Elements on different
+    pages without re-writting the whole page
+-->
+{%block title%}
+Programming with Flask
+{%endblock%}
+
+{%block body%}
+    <h1>Articles</h1>
+    {% for article in articles %}
+    <li class="list-group-item">
+        <a href="article/{{article.id}}">
+            {{article.title}}
+        </a>
+        <br>
+        <small>Author : {{article.author}}</small>
+    </li>
+    {%endfor%}
+{%endblock%}

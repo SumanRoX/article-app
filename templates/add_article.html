@@ -1,0 +1,28 @@
+{% extends 'layout.html'%} <!--
+    this where all our common code for the layout
+    will be rendered
+-->
+
+<!--
+    this is how you have to insert your DOM Elements on different
+    pages without re-writting the whole page
+-->
+{%block title%}
+Programming with Flask
+{%endblock%}
+
+{%block body%}
+<h1>Add Article</h1>
+{%from "includes/_formhelpers.html" import render_field%}
+<form action="" method="post">
+    <div class="form-group">
+        {{render_field(form.title, class="form-control")}}
+    </div>
+    <div class="form-group">
+        {{render_field(form.body, class="form-control", id="editor",row="10")}}
+    </div>
+    <p>
+        <button class="btn btn-primary" type="submit">Post</button>
+    </p>
+</form>
+{%endblock%}
